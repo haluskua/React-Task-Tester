@@ -8,7 +8,7 @@ function App() {
     <div className="container">
       <h1>Hello from {name}</h1>
       <h1>Hello from {x ? 'yes' : 'No'}</h1>
-      <Header />
+      <Header title = {1} />
     </div>
   );
 }
