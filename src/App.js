@@ -29,7 +29,9 @@ function App() {
   //Add Task
 
   const addTask = (task) => {
-  console.log(task);
+   const idNumber = Math.floor(Math.random() * 1000) + 1
+   const newTask = { idNumber, ...task}
+   setTasks([...tasks, newTask])
   }
 
   //Delete Task
@@ -43,7 +45,7 @@ function App() {
 
   // Toggle Reminder
   const toggleReminder = (id) => {
-    // console.log("toggled", id);
+    console.log("toggled", id);
     setTasks(tasks.map((task)=> task.id === id ? {...task, reminder: !task.reminder } : task))
   };
 

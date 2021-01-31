@@ -4,7 +4,7 @@ import React from "react";
 
 const Task = ({ task, onDelete, onToggle }) => {
   return (
-    <div className={`task ${task.reminder ? 'reminder' : ''}`} onClick={() => onToggle(task.id)}
+    <div className={`task ${task.reminder ? 'reminder' : ''}`} onClickCapture={() => onToggle(task.id)}
     >
       <h3>
         {task.text}{" "}
