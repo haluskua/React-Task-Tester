@@ -17,7 +17,7 @@ const AddTask = ({ onAdd }) => {
 
     setText('')
     setDay('')
-    setReminder(false)
+    setReminder(true)
   }
   
   return (
@@ -44,12 +44,12 @@ const AddTask = ({ onAdd }) => {
         <label>Set Reminder</label>
         <input
           type="checkbox"
-          ckecked={reminder}
+          checked={reminder}
           value={reminder}
           onChange={(e) => setReminder(e.currentTarget.checked)}
         />
       </div>
-      <input type="submit" value=" Save Task" className="btn btn-block" />
+      <input type="submit" value="Save Your Task" className="btn btn-block" />
     </form>
   );
 };

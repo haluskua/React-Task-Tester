@@ -5,21 +5,24 @@ import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
-  
- const [showAddTask, setShowAddTask] = useState(false)
+ const [tasks, setTasks] = useState([]);
+  const [showAddTask, setShowAddTask] = useState(false)
 
 useEffect(() => {
-  const fetchTasks = async () =>{
-    const res = await fetch('http://localhost:5000/tasks')
-    const data = await res.json()
-    
-    console.log(data)
-  } 
-  fetchTasks();
+  const getTask = async () => {
+    const tasksFromServer = await fetchTasks()
+    setTasks(tasksFromServer)
+  }
+  getTask();
 },[])
 
- 
+const fetchTasks = async () =>{
+    //jason server
+    const res = await fetch('http://localhost:5000/tasks')
+    const data = await res.json()
+    console.log(data) 
+    return data
+  } 
  
   //Add Task
 
