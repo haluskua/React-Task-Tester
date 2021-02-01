@@ -33,10 +33,11 @@ const fetchTasks = async () =>{
   }
 
   //Delete Task
-
-  const deleteTask = (id) => {
-    console.log("delete", id);
-
+  const deleteTask = async (id) => {
+    await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: 'DELETE', 
+    }) 
+    
     //HOW TO MUTATE STATE
     setTasks(tasks.filter((task) => task.id !== id));
   };
