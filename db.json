@@ -17,6 +17,12 @@
       "day": "December 2nd 3pm",
       "reminder": false,
       "id": 4
+    },
+    {
+      "text": "Rent arrears",
+      "day": "Monthly end of each month",
+      "reminder": true,
+      "id": 5
     }
   ]
 }
